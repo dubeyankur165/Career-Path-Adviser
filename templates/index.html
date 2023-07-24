@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        
+		<title>Intelligent Career Guidance</title>
+		
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+		<!-- Font Awesome Icon -->
+		
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href='index.css'>
+
+		<!-- Font Awesome Icon -->
+		<link type="text/css" rel="stylesheet" href='../css/s.css'>
+		<link type="text/css" rel="stylesheet" href='../css/bootstrap.min.css'>
+		<link type="text/css" rel="stylesheet" href='../css/font-awesome.min.css'>
+
+		<link type="text/css" rel="stylesheet" href="../Intelligent Career Guidance_files/bootstrap.min.css">
+		<link type="text/css" href="../Intelligent Career Guidance_files/css" rel="stylesheet">
+
+		<link type="text/css" href="../img/Intelligent Career Guidance_files/css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="../img/Intelligent Career Guidance_files/bootstrap.min.css">
+
+    </head>
+	<style>
+		/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  /* Style the container */
+  .containerNew {
+	margin-top: 30px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+	width: 80%;
+  }
+  
+	</style>
+
+    <body>
+        <!-- Header -->
+		<header id="header">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="clogo" style="margin-top:0px" href="http://localhost/SE/index.php">Career Recommender</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Mobile toggle -->
+					<button class="navbar-toggle">
+						<span></span>
+					</button>
+					<!-- /Mobile toggle -->
+				</div>
+
+				<!-- Navigation -->
+				<nav id="nav">
+					<ul class="main-menu nav navbar-nav navbar-right">
+						<li><a href="http://localhost/SE/index.php">Home</a></li>
+						<li><a href="http://localhost/SE/courses.php">Courses</a></li>
+						<li><a href="http://localhost/SE/blog.php">Knowledge Center</a></li>
+                        <!-- <li><a href="courses.php">Daily bytes</a></li> -->
+						<li><a href="http://localhost/SE/contact.php">Contact Us</a></li>
+					</ul>
+				</nav>
+				<!-- /Navigation -->
+
+			</div>
+		</header>
+
+
+        
+
+        <div class="containerNew"><h2>Please Fill in the Below details to help us find the Best suited Career for you!</h2></div>
+        
+		<div class="containerNew">
+        <form action="http://127.0.0.1:5000/predict" method="post">
+				<div class="col-25">
+            		<label for="db-label">Database Fundamentals:</label>
+				</div>
+				<div class="col-75">
+            	<select name="db" id="db">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            	</select>
+				</div>
+
+			<div class="col-25">
+			<label for="ca-label">Computer Architecture:</label>
+				</div>
+				<div class="col-75">
+            <select name="ca" id="ca">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+				</div>
+
+			<label for="dcs-label">Distributed Computing Systems:</label>
+            <select name="dcs" id="dcs">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="cs-label">Cyber Security:</label>
+            <select name="cs" id="cs">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="cn-label">Computer Networking:</label>
+            <select name="cn" id="cn">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="sd-label">Software Development:</label>
+            <select name="sd" id="sd">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="ps-label">Programming skills:</label>
+            <select name="ps" id="ps">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="pm-label">Project Management:</label>
+            <select name="pm" id="pm">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="cf-label">Computer Forensics Fundamentals:</label>
+            <select name="cf" id="cf">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="tc-label">Technical Communication skills:</label>
+            <select name="tc" id="tc">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="ai-label">AI ML:</label>
+            <select name="ai" id="ai">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="se-label">Software Engineering:</label>
+            <select name="se" id="se">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="ba-label">Business Analysis:</label>
+            <select name="ba" id="ba">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="comms-label">Communication Skills:</label>
+            <select name="comms" id="comms">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="ds-label">Data Science:</label>
+            <select name="ds" id="ds">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="ts-label">Troubleshooting skills:</label>
+            <select name="ts" id="ts">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+            </select>
+			<label for="gd-label">Graphics Designing:</label>
+            <select name="gd" id="gd">
+                <option value=0>Not Interested</option>
+                <option value=1>Poor</option>
+                <option value=2>Beginner</option>
+                <option value=3>Average</option>
+                <option value=4>Intermediate</option>
+                <option value=5>Excellent</option>
+                <option value=6>Professional</option>
+			</select>
+			<div class="row">
+				<input type="submit" value="Submit" style="margin-top: 50px;">
+			</div>
+			<br/>
+			<br/>
+        </form>
+	</div>
+    
+		
+    
+
+</body></html>

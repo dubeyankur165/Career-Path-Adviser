@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Predicted Career</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome Icon -->
+    
+
+    <!-- Custom stlylesheet -->
+
+    <!-- Font Awesome Icon -->
+    <link type="text/css" rel="stylesheet" href='../css/s.css'>
+    <link type="text/css" rel="stylesheet" href='../css/bootstrap.min.css'>
+    <link type="text/css" rel="stylesheet" href='../css/font-awesome.min.css'>
+
+    <link type="text/css" rel="stylesheet" href="../Intelligent Career Guidance_files/bootstrap.min.css">
+    <link type="text/css" href="../Intelligent Career Guidance_files/css" rel="stylesheet">
+
+    <link type="text/css" href="../img/Intelligent Career Guidance_files/css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../img/Intelligent Career Guidance_files/bootstrap.min.css">
+    <style>
+        
+
+body, table, input, select, textarea {
+
+}
+
+
+.graph {
+	margin-bottom:1em;
+  font:normal 100%/150% arial,helvetica,sans-serif;
+}
+
+.graph caption {
+	font:bold 150%/120% arial,helvetica,sans-serif;
+	padding-bottom:0.33em;
+}
+
+.graph tbody th {
+	text-align:right;
+}
+
+@supports (display:grid) {
+
+	@media (min-width:32em) {
+
+		.graph {
+			display:block;
+      width:600px;
+      height:300px;
+		}
+
+		.graph caption {
+			display:block;
+		}
+
+		.graph thead {
+			display:none;
+		}
+
+		.graph tbody {
+			position:relative;
+			display:grid;
+			grid-template-columns:repeat(auto-fit, minmax(2em, 1fr));
+			column-gap:2.5%;
+			align-items:end;
+			height:100%;
+			margin:3em 0 1em 2.8em;
+			padding:0 1em;
+			border-bottom:2px solid rgba(0,0,0,0.5);
+			background:repeating-linear-gradient(
+				180deg,
+				rgba(170,170,170,0.7) 0,
+				rgba(170,170,170,0.7) 1px,
+				transparent 1px,
+				transparent 20%
+			);
+		}
+
+		.graph tbody:before,
+		.graph tbody:after {
+			position:absolute;
+			left:-3.2em;
+			width:2.8em;
+			text-align:right;
+			font:bold 80%/120% arial,helvetica,sans-serif;
+		}
+
+		.graph tbody:before {
+			content:"100%";
+			top:-0.6em;
+		}
+
+		.graph tbody:after {
+			content:"0%";
+			bottom:-0.6em;
+		}
+
+		.graph tr {
+			position:relative;
+			display:block;
+		}
+
+		.graph tr:hover {
+			z-index:999;
+		}
+
+		.graph th,
+		.graph td {
+			display:block;
+			text-align:center;
+		}
+
+		.graph tbody th {
+			position:absolute;
+			top:-3em;
+			left:0;
+			width:100%;
+			font-weight:normal;
+			text-align:center;
+            white-space:nowrap;
+			text-indent:0;
+		}
+
+		.graph tbody th:after {
+			content:"";
+		}
+
+		.graph td {
+			width:100%;
+			height:100%;
+			background:purple;
+			border-radius:0.5em 0.5em 0 0;
+			transition:background 0.5s;
+		}
+
+		.graph tr:hover td {
+			opacity:0.7;
+		}
+
+		.graph td span {
+			overflow:hidden;
+			position:absolute;
+			left:50%;
+			top:50%;
+			width:0;
+			padding:0.5em 0;
+			margin:-1em 0 0;
+			font:normal 85%/120% arial,helvetica,sans-serif;
+/* 			background:white; */
+/* 			box-shadow:0 0 0.25em rgba(0,0,0,0.6); */
+			font-weight:bold;
+			opacity:0;
+			transition:opacity 0.5s;
+            color:white;
+		}
+
+		.toggleGraph:checked + table td span,
+		.graph tr:hover td span {
+			width:4em;
+			margin-left:-2em; /* 1/2 the declared width */
+			opacity:1;
+		}
+
+
+
+    
+
+
+	} /* min-width:32em */
+
+} /* grid only */
+    </style>
+</head>
+<header id="header">
+	<div class="container">
+
+		<div class="navbar-header">
+			<!-- Logo -->
+			<div class="navbar-brand">
+				<a class="clogo" style="margin-top:0px" href="http://localhost/SE/index.php">Career Recommender</a>
+			</div>
+			<!-- /Logo -->
+
+			<!-- Mobile toggle -->
+			<button class="navbar-toggle">
+				<span></span>
+			</button>
+			<!-- /Mobile toggle -->
+		</div>
+
+		<!-- Navigation -->
+		<nav id="nav">
+			<ul class="main-menu nav navbar-nav navbar-right">
+				<li><a href="http://localhost/SE/index.php">Home</a></li>
+				<li><a href="http://localhost/SE/courses.php">Courses</a></li>
+				<li><a href="http://localhost/SE/blog.php">Knowledge Center</a></li>
+				<!-- <li><a href="courses.php">Daily bytes</a></li> -->
+				<li><a href="http://localhost/SE/contact.php">Contact Us</a></li>
+			</ul>
+		</nav>
+		<!-- /Navigation -->
+
+	</div>
+</header>
+	<div class="container">
+    <div style="margin-top: 150px;float: left;width: 40%;">
+        <table class="graph">
+            <caption>These are the top jobs that matched your skills!</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Percent</th>
+                </tr>
+            </thead><tbody>
+                <tr style="height:{{val1}}%">
+                    <th scope="row">{{job1}}</th>
+                    <td><span>{{val1}}%</span></td>
+                </tr>
+                <tr style="height:{{val2}}%">
+                    <th scope="row">{{job2}}</th>
+                    <td><span>{{val2}}%</span></td>
+                </tr>
+                <tr style="height:{{val3}}%">
+                    <th scope="row">{{job3}}</th>
+                    <td><span>{{val3}}%</span></td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+	
+    <div style="margin-top: 150px;float: right;width: 40%;"> 
+		<h3>{{job1}} : {{val1}}% match</h3>
+		<h3>{{job2}} : {{val2}}% match</h3>
+		<h3>{{job3}} : {{val3}}% match</h3>
+		<a href="http://localhost/SE/blog.php">Click to learn more About the Jobs</a>
+	</div> 
+	</div>
+</html>
